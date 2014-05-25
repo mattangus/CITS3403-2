@@ -11,7 +11,8 @@ class ApplicationController < ActionController::Base
   end
 
   def register
-
+    @user = new_user
+    render 'users/new'
   end
 
   def workspace
@@ -19,13 +20,15 @@ class ApplicationController < ActionController::Base
   end
 
   def index
-    raise "RAISE"
+    #if request.delete?
+
+   # end
   end
 
   protected
   def authorize
     unless User.find_by_id(session[:user_id])
-      redirect_to login_url, notice: "Please log in"
+      redirect_to login_url, notice: 'Please log in!'
     end
   end
 

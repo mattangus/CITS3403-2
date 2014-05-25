@@ -6,7 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= yield :head %>
   <%= csrf_meta_tags %>
-  <% stylesheet_link_tag "custom", media: "all"%>
+  <% stylesheet_link_tag 'custom', media: 'all'%>
+  <%= yield :head %>
 </head>
 <body>
 
@@ -19,10 +20,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">UWACollab
+      <%= link_to 'UWACollab', '/', :class => 'navbar-brand'%>
+      <a class="navbar-brand" href="/">
         <%= image_tag "Collaboration.gif", :width=>"30", :height=>"30"%>
       </a>
     </div>
+    <%= yield :nav %>
   </div>
 </div>
 
@@ -31,6 +34,23 @@
     <%= yield %>
   </article>
 </div>
+
+
+<footer>
+  <p>&copy; Matthew Angus & Julia Stevens | CITS3403 | Semester 1, 2014
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+      <img style="border:0;width:88px;height:31px"
+           src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+           alt="Valid CSS!" />
+    </a>
+  </p>
+</footer>
+<!-- /container -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
-
