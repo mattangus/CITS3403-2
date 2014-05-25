@@ -3,7 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
+    raise('raised')
     user = User.find_by_email(params[:email])
+    raise(user.inspect)
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to 'application/workspace'
