@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/', to: 'sessions#create'
  # get '/', to: 'application#index', as: 'home'
   get '/login', to: 'application#index'
+  delete '/workspace', to: 'sessions#destroy'
 
   get '/workspace', to: 'application#workspace', :files => false
   get '/workspace/files', to: 'application#workspace', :files => true
