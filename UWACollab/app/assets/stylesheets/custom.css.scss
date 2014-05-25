@@ -1,0 +1,36 @@
+@import "bootstrap";
+
+/* universal */
+
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+/*body {
+  padding-top: 60px;
+}
+*/
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+.jumbotron {
+  background-color:#CCE5FF;
+}

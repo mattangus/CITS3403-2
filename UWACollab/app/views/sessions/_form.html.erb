@@ -1,0 +1,15 @@
+<%= form_tag({:controller => 'sessions', :action => 'create'}, :method => :post) do %>
+    <fieldset>
+      <% if flash[:alert] %>
+          <p id="notice"><%= flash[:alert] %></p>
+      <% end %>
+
+      <div class="form-group">
+        <%= text_field_tag :email, params[:email], :class => "form-control", :placeholder => "UWA Email"%>
+      </div>
+      <div class="form-group">
+        <%= text_field_tag :password, params[:password], :class => "form-control", :placeholder => "Password"%>
+      </div>
+      <%= submit_tag 'login', :class => "btn btn-primary"%> <!--link_to 'Login', login_path, :class => "btn btn-primary"%>-->
+    </fieldset>
+<% end %>
