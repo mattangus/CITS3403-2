@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to users_url
+      redirect_to 'application/workspace'
     else
       redirect_to login_url, :alert => 'Invalid user/password combination'
     end

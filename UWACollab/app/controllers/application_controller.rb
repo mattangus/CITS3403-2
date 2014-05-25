@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include UsersHelper
   #before_action :authorize
 
   def project
@@ -6,7 +7,8 @@ class ApplicationController < ActionController::Base
   end
 
   def register
-
+    @user = new_user
+    render 'users/new'
   end
 
   def workspace
@@ -14,7 +16,9 @@ class ApplicationController < ActionController::Base
   end
 
   def index
+    if request.delete?
 
+    end
   end
 
   protected

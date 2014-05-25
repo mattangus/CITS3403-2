@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root :controller => 'application', :action => 'index'
   post '/', to: 'sessions#create'
+ # get '/', to: 'application#index', as: 'home'
   get '/login', to: 'application#index'
 
   get '/workspace', to: 'application#workspace', :files => false
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
     # Skipped other routes definitions
   end
 
-
+  delete '/workspace', to: 'application#index'
 
   resources :users
 
