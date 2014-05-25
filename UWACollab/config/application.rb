@@ -22,5 +22,7 @@ module UWACollab
     config.assets.precompile += %w(%.png %.jpg %.jpeg %.gif)
     Rails.application.config.assets.precompile += %w( custom.css )
     Rails.application.config.assets.precompile += %w( home.css )
+    Rails.application.config.assets.precompile += %w( message_poll.js )
+    Rails.application.config.assets.precompile += %w( messages.css )
   end
 end

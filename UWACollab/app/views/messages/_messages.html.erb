@@ -1,0 +1,19 @@
+  <% @messages.each do |m| %>
+      <% if m.sender_id != @userID %>
+          <% msgClass = 'received' %>
+          <% msgStatus = 'from: ' + m.sender_id.to_s #TODO:replace with name%>
+      <% else %>
+          <% msgClass = 'sent' %>
+          <% msgStatus = 'sent' %>
+      <% end %>
+      <div class="<%= msgClass %>" data-time="<%= m.created_at.to_i %>">
+        <div class="msg">
+          <div class="msgBody">
+            <%= m.content.gsub("\r\n", '<br />').html_safe %>
+          </div>
+          <div class="msgStatus">
+            <%= msgStatus %>
+          </div>
+        </div>
+      </div>
+  <% end %>

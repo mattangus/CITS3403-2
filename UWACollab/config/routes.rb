@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   get '/project', to: 'application#project', :files => true
   get '/newProject', to: 'application#project', :new => true
 
+
+  get '/messages', to: 'messages#index'
+  post '/messages', to: 'messages#create'
+
   UWACollab::Application.routes.draw do
     controller :sessions do
       get 'login' => :new

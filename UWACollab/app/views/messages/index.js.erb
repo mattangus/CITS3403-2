@@ -1,0 +1,13 @@
+<% @messages.each do |m| %>
+    $('#messages').append("<div class=\"received\" data-time=\"<%= m.created_at.to_i %>\">" +
+                            "<div class=\"msg\" >"+
+                                "<div class=\"msgBody\">" +
+                                    "<%= m.content.gsub("\r\n", "<br />").html_safe %>" +
+                                "</div>"+
+                                "<div class=\"msgStatus\">" +
+                                    "from: <%= m.sender_id.to_i %>" +
+                                "</div>" +
+                            "</div>" +
+                         "</div>");
+    $("#messages").animate({ "scrollTop": $('#messages')[0].scrollHeight}, "slow");
+<% end %>

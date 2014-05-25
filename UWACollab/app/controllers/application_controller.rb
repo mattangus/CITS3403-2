@@ -1,8 +1,13 @@
 class ApplicationController < ActionController::Base
+  include MessagesHelper
+  include GroupsHelper
   #before_action :authorize
 
   def project
-
+    @userID = 1 #session[:user_id]
+    @groupID = getGroupByName(params[:name]).id
+    @messages = getMessagesByGroup(@groupID)
+    render 'projects/index'
   end
 
   def register

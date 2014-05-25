@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Message.create([
+              {content: 'hello', format: 1,sender_id: 1, group_id:1 },
+              {content: 'hello2', format: 1,sender_id: 2, group_id:1 }
+              ])
+
+Group.create([
+                   {users: '1;2', name: 'first'}
+               ])

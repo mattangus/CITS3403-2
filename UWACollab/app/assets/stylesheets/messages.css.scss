@@ -1,0 +1,73 @@
+// Place all the styles related to the Message controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#messages {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.panel-body {
+  height: 90%;
+}
+
+#sendButton {
+  position:absolute;
+  bottom:10px;
+  right:10px;
+}
+
+#editor {
+  display:inline-block;
+  position:relative;
+}
+
+#message_content {
+  border:none;
+  outline:none;
+  width:418px;
+  height:50px;
+  -webkit-box-shadow:none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize:none;
+}
+
+.received {
+  width:calc(50% - 10px);
+  margin-left:10px;
+  float:left;
+  clear:both;
+}
+
+.received .msgBody {
+  background-color:#999;
+  border-top-right-radius:5px;
+  border-bottom-right-radius:5px;
+  padding:5px 5px 0px 3px;
+}
+
+.received .msgStatus {
+  font-size:12px;
+  margin-left:10px;
+  clear:both;
+}
+
+.sent {
+  text-align:right;
+  width:calc(50% - 10px);
+  margin-right:10px;
+  float:right;
+  clear:both;
+}
+
+.sent .msgBody {
+  background-color:#06C;
+  border-top-left-radius:5px;
+  border-bottom-left-radius:5px;
+  padding:5px 5px 3px 0px;
+}
+
+.sent .msgStatus {
+  font-size:10px;
+  margin-right:10px;
+}

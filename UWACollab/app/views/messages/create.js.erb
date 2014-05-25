@@ -1,0 +1,13 @@
+$("#message_content").val('');
+$('#messages').append("<div class=\"sent\" data-time=\"<%= @messageSent.created_at.to_i %>\">" +
+                        "<div class=\"msg\" >"+
+                            "<div class=\"msgBody\">" +
+                                "<%= @messageSent.content.gsub("\r\n", "<br />").html_safe %>" +
+                            "</div>"+
+                            "<div class=\"msgStatus\">" +
+                                "sent" +
+                            "</div>" +
+                        "</div>" +
+                     "</div>");
+$("#messages").animate({ "scrollTop": $('#messages')[0].scrollHeight}, "slow");
+$('#chat_message').focus();
