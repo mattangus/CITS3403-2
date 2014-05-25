@@ -1,10 +1,13 @@
 class ApplicationController < ActionController::Base
+<<<<<<< HEAD
   include MessagesHelper
   include GroupsHelper
+  #before_action :authorize
+=======
   include UsersHelper
   before_action :authorize
   skip_before_action :authorize, only: [:index, :register]
-
+>>>>>>> origin/master
 
   def project
     @userID = 1 #session[:user_id]
@@ -23,9 +26,13 @@ class ApplicationController < ActionController::Base
   end
 
   def index
+<<<<<<< HEAD
+    raise "RAISE"
+=======
     #if request.delete?
 
    # end
+>>>>>>> origin/master
   end
 
   protected
