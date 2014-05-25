@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def index
-
+    raise "RAISE"
   end
 
   protected
