@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include UsersHelper
-  #before_action :authorize
+  before_action :authorize
+  skip_before_action :authorize, only: [:index, :register]
 
   def project
 
@@ -16,15 +17,15 @@ class ApplicationController < ActionController::Base
   end
 
   def index
-    if request.delete?
+    #if request.delete?
 
-    end
+   # end
   end
 
   protected
   def authorize
     unless User.find_by_id(session[:user_id])
-      redirect_to login_url, notice: "Please log in"
+      redirect_to login_url, notice: 'Please log in!'
     end
   end
 
