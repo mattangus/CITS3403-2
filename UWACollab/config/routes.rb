@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'upcomings/new'
+
+  get 'upcomings/create'
+
+  get 'upcomings/destroy'
+
   get '/calendar(/:year(/:month))', to: 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   root :controller => 'application', :action => 'index'
   post '/', to: 'sessions#create'
@@ -19,10 +25,19 @@ Rails.application.routes.draw do
   get '/newProject', to: 'application#project', :new => true
   post '/newProject', to: 'groups#new'
 
+  get '/newEvent', to: 'application#userEvent', :files => true
+  post '/newEvent', to: 'upcomings#userNew'
+
   get '/messages', to: 'messages#index'
   post '/messages', to: 'messages#create'
 
   UWACollab::Application.routes.draw do
+  get 'upcomings/new'
+
+  get 'upcomings/create'
+
+  get 'upcomings/destroy'
+
     controller :sessions do
       get 'login' => :new
       post 'login' => :create

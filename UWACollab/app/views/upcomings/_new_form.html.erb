@@ -1,0 +1,10 @@
+<h2>Create A New Event</h2>
+<%= form_tag do%>
+    <%= label_tag(:name, 'Event Description:') %><br/>
+    <%= text_field_tag('upcoming[name]') %><br/>
+    <%= label_tag(:date, 'Event Date (MonthName Day):') %><br>
+    <%= text_field_tag('upcoming[date]') %><br/>
+    <%= label_tag(:tag, 'Event Tag (optional):') %><br/>
+    <%= text_field_tag('upcoming[tag]') %><br/>
+    <%= submit_tag('Create', :class => 'btn btn-primary') %>
+<% end %>

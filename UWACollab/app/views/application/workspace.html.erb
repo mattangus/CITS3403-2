@@ -38,37 +38,26 @@
       <div class="col-sm-6">
        <!-- <iframe src="http://www.google.com/calendar/embed?src=21442323%40student.uwa.edu.au" style="border: 0" width="550px" height="450px" ></iframe>-->
         <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Important Dates</h3>
-          </div>
-          <div class="panel-body">
-            <div class="panel-body" style="height:400px">
-              <div class="col-sm-5">
-                <h4> Event </h4> <br>
-                CITS3403 Project Demo<br>
-                ITAL1401 Role Play<br>
-                CITS3403 Project Stage 2<br>
-                Last day of classes
-              </div>
-              <div class="col-sm-4">
-                <h4> Date </h4> <br>
-                May 27th<br>
-                May 28th<br>
-                May 30th<br>
-                May 30th
-              </div>
-              <div class="col-sm-2">
-                <h4> Project </h4> <br>
-                CITS3403<br>
-                ITAL1401<br>
-                CITS3403<br>
-                Personal
-              </div>
+            <div class="panel-heading">
+                 <h3 class="panel-title">Upcoming Events</h3>
             </div>
-          </div>
+            <div class="panel-body">
+                <div class="panel-body" style="height:400px">
+                    <table class="table table-striped">
+                     <thead>
+                        <tr>
+                        <th>Event</th>
+                        <th>Date</th>
+                        <th>Tag</th>
+                     </tr>
+                    </thead>
+                     <%= render 'upcomings/list' %>
+                    </table>
+                    <%= render 'upcomings/new_button' %>
+                </div>
+            </div>
         </div>
       </div>
-
       <div class="col-sm-3">
         <div class="panel panel-primary">
           <div class="panel-heading">
