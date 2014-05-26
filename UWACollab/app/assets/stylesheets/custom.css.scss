@@ -3,6 +3,7 @@
 /* universal */
 
 body {
+  background-color:#CCE5FF;
   padding-top: 50px;
   padding-bottom: 20px;
 }
@@ -33,4 +34,9 @@ textarea {
 
 .jumbotron {
   background-color:#CCE5FF;
+}
+
+footer{
+  position: absolute;
+  bottom: 0px;
 }

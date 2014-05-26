@@ -40,7 +40,8 @@
 }
 
 .received .msgBody {
-  background-color:#999;
+  color:#5e5e5e;
+  background-color:#777777;
   border-top-right-radius:5px;
   border-bottom-right-radius:5px;
   padding:5px 5px 0px 3px;
@@ -61,7 +62,8 @@
 }
 
 .sent .msgBody {
-  background-color:#06C;
+  color:#5e5e5e;
+  background-color:#006dcc;
   border-top-left-radius:5px;
   border-bottom-left-radius:5px;
   padding:5px 5px 3px 0px;
