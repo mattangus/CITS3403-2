@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
   include UsersHelper
+  layout false
+
   def new
     group = Group.new
     users = [session[:user_id]]

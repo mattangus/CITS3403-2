@@ -1,5 +1,8 @@
 class MessagesController < ApplicationController
   include SessionsHelper
+
+  layout false
+
   def create
     @groupID = message_params[:group_id]
     @userID = currentUser
