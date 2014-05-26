@@ -1,6 +1,18 @@
+<% content_for :nav do %>
+    <div class="collapse navbar-collapse">
+      <div class="navbar-form navbar-right">
+
+        <%= form_tag do %>
+            <%= render 'sessions/form'%>
+        <% end %>
+      </div>
+    </div>
+<% end %>
+
 
   <div class="container">
     <h2>Please fill in your information:</h2>
 
     <%= render 'users/form' %><br>
   </div>
+

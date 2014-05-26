@@ -9,14 +9,12 @@ class GroupsController < ApplicationController
         users.append found
       end
     end
-    raise users.inspect
     if users.length > 1
       group.users = users.join(';')
     else
       group.users = users[0]
     end
     group.name = group_params[:name]
-    raise group.inspect
     redirect_to workspace_path
   end
 
