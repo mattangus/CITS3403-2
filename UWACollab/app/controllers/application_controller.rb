@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :authorize
   skip_before_action :authorize, only: [:index, :register]
 
+  layout false
 
   def project
     @userID = session[:user_id]
@@ -23,7 +24,6 @@ class ApplicationController < ActionController::Base
   def register
     @user = new_user
     render 'users/new'
-    redirect_to
   end
 
   def workspace

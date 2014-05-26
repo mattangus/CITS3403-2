@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'test2/index'
+
+  get 'test1/index'
+
   get '/calendar(/:year(/:month))', to: 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   root :controller => 'application', :action => 'index'
   post '/', to: 'sessions#create'
@@ -23,6 +27,10 @@ Rails.application.routes.draw do
   post '/messages', to: 'messages#create'
 
   UWACollab::Application.routes.draw do
+  get 'test2/index'
+
+  get 'test1/index'
+
     controller :sessions do
       get 'login' => :new
       post 'login' => :create
