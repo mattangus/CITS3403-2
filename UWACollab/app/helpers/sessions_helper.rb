@@ -1,5 +1,7 @@
 module SessionsHelper
+  public
   def currentUser
+    #raise session[:user_id]
     return session[:user_id]
   end
 

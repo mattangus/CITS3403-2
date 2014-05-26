@@ -5,7 +5,7 @@
                                     "<%= m.content.gsub("\r\n", "<br />").html_safe %>" +
                                 "</div>"+
                                 "<div class=\"msgStatus\">" +
-                                    "from: <%= m.sender_id.to_i %>" +
+                                    "from: <%= m.user.first %>" +
                                 "</div>" +
                             "</div>" +
                          "</div>");

@@ -6,17 +6,16 @@ class GroupsController < ApplicationController
     group_params[:people].to_s.split('\r\n').each do |email|
       found = findUserByEmail(email)
       if found
-        users.append found
+        users.append found.id
       end
     end
-    raise users.inspect
     if users.length > 1
       group.users = users.join(';')
     else
       group.users = users[0]
     end
     group.name = group_params[:name]
-    raise group.inspect
+    group.save
     redirect_to workspace_path
   end
 
