@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorize, only: [:create, :new]
-=======
-  before_action :set_user, only: [:show, :create, :edit, :update, :destroy]
->>>>>>> e919ce4ecd921802e6f9ac1407fe3126bd481acb
+
 
   # GET /users
   # GET /users.json

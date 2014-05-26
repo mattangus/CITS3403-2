@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     # Skipped other routes definitions
   end
 
-  delete '/workspace', to: 'application#index'
+ # delete '/workspace', to: 'application#index'
 
   get '/users', to: 'users#new'
   post '/users', to: 'users#create'
