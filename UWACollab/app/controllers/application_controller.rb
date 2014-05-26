@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
   def register
     @user = new_user
     render 'users/new'
+    redirect_to
   end
 
   def workspace

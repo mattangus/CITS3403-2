@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/workspace', to: 'application#workspace', :files => false
   get '/workspace/files', to: 'application#workspace', :files => true
   delete '/workspace', to: 'sessions#destroy'
+  delete '/project/:name', to: 'sessions#destroy'
 
   get '/register', to: 'application#register'
   post '/register', to: 'sessions#create'
