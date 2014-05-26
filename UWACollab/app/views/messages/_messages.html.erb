@@ -1,7 +1,8 @@
-  <% @messages.each do |m| %>
+<% @messages.each do |m| %>
+
       <% if m.sender_id != @userID %>
           <% msgClass = 'received' %>
-          <% msgStatus = 'from: ' + m.sender_id.to_s #TODO:replace with name%>
+          <% msgStatus = 'from: ' + m.user.first #TODO:replace with name%>
       <% else %>
           <% msgClass = 'sent' %>
           <% msgStatus = 'sent' %>

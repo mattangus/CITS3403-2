@@ -1,9 +1,14 @@
 class Message < ActiveRecord::Base
-  def self.addMessage(params)
+  include SessionsHelper
+
+  belongs_to :group
+  belongs_to :user, :foreign_key => :sender_id
+
+  def self.addMessage(params, sender)
     @message = Message.new
     @message.content = params[:content]
-    @message.sender_id = 1 #TODO: look up person id with session
-    @message.group_id = params[:group_id] #TODO: check if user has access to this group id
+    @message.sender_id = sender
+    @message.group_id = params[:group_id]
     @message.format = 1 #TODO figure out how to set this
     if @message.save
       return @message
