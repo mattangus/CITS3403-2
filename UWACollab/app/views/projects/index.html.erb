@@ -3,6 +3,16 @@
     <%= stylesheet_link_tag('messages.css') %>
 <% end %>
 
+<% content_for :nav do %>
+    <div class="collapse navbar-collapse">
+      <div class="navbar-form navbar-right">
+        <%= form_tag do %>
+            <%= render 'sessions/logout'%>
+        <% end %>
+      </div>
+    </div>
+<% end %>
+
   <div class="container">
     <br>
     <div class="row">
