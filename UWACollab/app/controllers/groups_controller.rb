@@ -24,6 +24,19 @@ class GroupsController < ApplicationController
     redirect_to workspace_path
   end
 
+  def update
+    group = Group.getGroupByName
+    respond_to do |format|
+      if group.update(group_params)
+        format.html { redirect_to group, notice: 'User was successfully updated.' }
+        format.json { render :show, status: :ok, location: group }
+      else
+        format.html { render :edit }
+        format.json { render json: group.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
   def group_params
     params.require(:project).permit(:name, :people)
