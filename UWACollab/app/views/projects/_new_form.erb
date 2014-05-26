@@ -1,0 +1,8 @@
+<h2>Create A New Project</h2>
+<%= form_tag do%>
+    <%= label_tag(:name, 'Name of project:') %><br/>
+    <%= text_field_tag('project[name]') %><br/>
+    <%= label_tag('project[people]', 'Contributors(new line for each email):') %><br/>
+    <%= text_area(:project, :people) %><br/>
+    <%= submit_tag('Create', :class => 'btn btn-primary') %>
+<% end %>

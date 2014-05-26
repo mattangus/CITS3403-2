@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/project/:name', to: 'application#project', :files => false
   get '/project', to: 'application#project', :files => true
   get '/newProject', to: 'application#project', :new => true
-
+  post '/newProject', to: 'groups#new'
 
   get '/messages', to: 'messages#index'
   post '/messages', to: 'messages#create'
