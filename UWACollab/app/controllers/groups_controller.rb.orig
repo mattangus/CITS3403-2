@@ -1,5 +1,11 @@
 class GroupsController < ApplicationController
   include UsersHelper
+<<<<<<< HEAD
+  layout 'application'
+=======
+  layout false
+>>>>>>> master
+
   def new
     group = Group.new
     users = [session[:user_id]]
@@ -15,7 +21,10 @@ class GroupsController < ApplicationController
       group.users = users[0]
     end
     group.name = group_params[:name]
-    group.save
+    if !group.save
+      @errors = group.errors
+      redirect_to newProject_path
+    end
     redirect_to workspace_path
   end
 

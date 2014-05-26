@@ -2,9 +2,11 @@ class ApplicationController < ActionController::Base
   include MessagesHelper
   include GroupsHelper
   include UsersHelper
+  include UpcomingsHelper
   before_action :authorize
   skip_before_action :authorize, only: [:index, :register]
 
+  layout false
 
   def project
     @userID = session[:user_id]
@@ -20,15 +22,20 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def userEvent
+    @upcoming = new_upcoming
+    render 'upcomings/new'
+  end
+
   def register
     @user = new_user
     render 'users/new'
-    redirect_to
   end
 
   def workspace
     @userID = session[:user_id]
     @groups = getGroupsByUser(@userID)
+    @upcomings = Upcoming.where('external_id=?', @userID)
   end
 
   def index

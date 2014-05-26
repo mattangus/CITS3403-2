@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+<% @view_flow.content.delete(:nav)%>
+<% set_content_for :nav do %>
+=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,8 +10,6 @@
   <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
   <%= stylesheet_link_tag    'custom', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag('message_poll.js') %>
-  <%= stylesheet_link_tag('messages.css') %>
   <%= csrf_meta_tags %>
   <% stylesheet_link_tag 'custom', media: 'all'%>
 </head>
@@ -27,18 +29,39 @@
         <%= image_tag "Collaboration.gif", :width=>"30", :height=>"30"%>
       </a>
     </div>
+>>>>>>> master
     <div class="collapse navbar-collapse">
     <div class="navbar-form navbar-right">
       <%= form_tag do %>
           <%= render 'sessions/logout'%>
       <% end %>
     </div>
-    </div>
+  </div>
   </div>
 </div>
 
+<<<<<<< HEAD
+
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="panel panel-primary" style="width:250px">
+          <div class="panel-heading">
+            <h3 class="panel-title">Current Projects</h3>
+          </div>
+          <div class="panel-body">
+            <%= render 'projects/list' %>
+            <%= render 'projects/new_button' %>
+          </div>
+        </div>
+        <div class="panel panel-primary" style="width:250px">
+          <div class="panel-heading">
+            <h3 class="panel-title">My Files</h3>
+=======
 <div class = "jumbotron">
   <article>
+
     <div class="container">
       <br>
       <div class="row">
@@ -49,59 +72,68 @@
             </div>
             <div class="panel-body">
               <%= render 'projects/list' %>
+              <%= render 'projects/new_button' %>
             </div>
+>>>>>>> master
           </div>
           <div class="panel panel-primary" style="width:250px">
             <div class="panel-heading">
-              <h3 class="panel-title">
-                <a href="Files.html">My Files</a></h3>
+              <h3 class="panel-title">My Files</h3>
             </div>
             <div class="panel-body">
               <a href="Files.html">file.html</a> <br>
               <a href="Files.html">custom.css</a>
             </div>
           </div>
-          <div class="panel panel-primary" style="width:250px">
-            <div class="panel-heading">
-              <h3 class="panel-title">Group File</h3>
-            </div>
-            <div class="panel-body">
-              <a href="Files.html">Project.docx</a> <br>
-              <a href="Files.html">AssignmentGuidelines.docx</a>
-            </div>
-          </div>
         </div>
 
-      <div class="col-sm-8">
-        <div class="panel panel-primary" style="width:700px; height:350px">
+      <div class="col-sm-6">
+<<<<<<< HEAD
+        <iframe src="http://www.google.com/calendar/embed?src=21442323%40student.uwa.edu.au" style="border: 0" width="550px" height="450px" ></iframe>
+=======
+       <!-- <iframe src="http://www.google.com/calendar/embed?src=21442323%40student.uwa.edu.au" style="border: 0" width="550px" height="450px" ></iframe>-->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                 <h3 class="panel-title">Upcoming Events</h3>
+            </div>
+            <div class="panel-body">
+                <div class="panel-body" style="height:400px">
+                    <table class="table table-striped">
+                     <thead>
+                        <tr>
+                        <th>Event</th>
+                        <th>Date</th>
+                        <th>Tag</th>
+                     </tr>
+                    </thead>
+                     <%= render 'upcomings/list' %>
+                    </table>
+                    <%= render 'upcomings/new_button' %>
+                </div>
+            </div>
+        </div>
+>>>>>>> master
+      </div>
+      <div class="col-sm-3">
+        <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">Group Chat</h3>
+            <h3 class="panel-title">Due This Week</h3>
           </div>
           <div class="panel-body">
-            <div id="messages">
-              <%= render 'messages/messages' %>
-            </div>
+            CITS3403 Project Stage I <br>
+            GEND1901 Short Report
           </div>
         </div>
-        <div class="panel panel-primary" style="width:700px; height:80px">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Upcoming</h3>
+          </div>
           <div class="panel-body">
-            <div id="editor">
-              <%= render 'messages/form' %>
-            </div>
+            UWA Study Break <br>
+            CITS3403 Midterm
           </div>
         </div>
       </div>
-
-        <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Group Calendar</h3>
-            </div>
-            <div class="panel-body">
-              <iframe src="http://www.google.com/calendar/embed?src=21442323%40student.uwa.edu.au" style="border: 0" width="325" height="225"></iframe>
-            </div>
-          </div>
-        </div>
 
 
         <p><br><br><br><br></p>

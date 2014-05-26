@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   include UsersHelper
-  layout 'application'
+  layout false
 
   def new
     group = Group.new

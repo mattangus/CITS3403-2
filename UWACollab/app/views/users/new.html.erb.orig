@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+<% set_content_for :nav do %>
+=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +11,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <% stylesheet_link_tag 'custom', media: 'all'%>
-  <%= stylesheet_link_tag 'home' %>
+
 </head>
 <body>
 
@@ -26,23 +29,24 @@
         <%= image_tag "Collaboration.gif", :width=>"30", :height=>"30"%>
       </a>
     </div>
+>>>>>>> master
     <div class="collapse navbar-collapse">
-      <div class="navbar-form navbar-right">
+    <div class="navbar-form navbar-right">
 
-        <%= form_tag do %>
-            <%= render 'sessions/form'%>
-        <% end %>
-      </div>
+      <%= form_tag do %>
+          <%= render 'sessions/form'%>
+      <% end %>
     </div>
+  </div>
   </div>
 </div>
 
 <div class = "jumbotron">
   <article>
-    <div class="container"><br><br><br><br>
-      <h1> UWACollab </h1><br>
-      <p class = "lead"><br>The group collaboration site designed to make group projects as painless as possible! Includes real time chat, document upload, support for multiple groups and projects, and more!<br><br></p>
-      <p><%= link_to "Sign up!", '/register', :class => "btn btn-primary btn-lg" %></p><br><br><br><br>
+    <div class="container">
+      <h2>Please fill in your information:</h2>
+
+      <%= render 'users/form' %><br>
     </div>
   </article>
 </div>

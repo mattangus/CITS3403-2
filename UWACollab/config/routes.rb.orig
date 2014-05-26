@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+<<<<<<< Updated upstream
   get 'upcomings/new'
 
   get 'upcomings/create'
 
   get 'upcomings/destroy'
+=======
+  resource :resumes
+>>>>>>> Stashed changes
 
   get '/calendar(/:year(/:month))', to: 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   root :controller => 'application', :action => 'index'
@@ -32,9 +36,21 @@ Rails.application.routes.draw do
   post '/messages', to: 'messages#create'
 
   UWACollab::Application.routes.draw do
+<<<<<<< Updated upstream
   get 'upcomings/new'
 
   get 'upcomings/create'
+=======
+  get 'resumes/index'
+
+  get 'resumes/new'
+
+  get 'resumes/create'
+
+  get 'resumes/destroy'
+
+  get 'test2/index'
+>>>>>>> Stashed changes
 
   get 'upcomings/destroy'
 
