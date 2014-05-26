@@ -1,4 +1,10 @@
 Rails.application.configure do
+
+  UWACollab::Application.configure do
+    config.active_support.deprecation = :log
+    config.cache_classes = false
+    config.gem 'carrierwave'
+  end
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

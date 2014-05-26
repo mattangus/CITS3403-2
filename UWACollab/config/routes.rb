@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
 
+  get '/calendar(/:year(/:month))', to: 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   root :controller => 'application', :action => 'index'
   post '/', to: 'sessions#create'
  # get '/', to: 'application#index', as: 'home'
   get '/login', to: 'application#index'
-  delete '/workspace', to: 'sessions#destroy'
 
   get '/workspace', to: 'application#workspace', :files => false
   get '/workspace/files', to: 'application#workspace', :files => true
+  delete '/workspace', to: 'sessions#destroy'
 
   get '/register', to: 'application#register'
 
@@ -30,7 +31,10 @@ Rails.application.routes.draw do
 
   delete '/workspace', to: 'application#index'
 
-  resources :users
+  get '/users', to: 'users#new'
+  post '/users', to: 'users#create'
+
+  #resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
