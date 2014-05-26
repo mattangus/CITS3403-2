@@ -140,7 +140,7 @@ DEPENDENCIES
   activerecord-session_store
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.1.1.1)
-  carrierwave
+  carrierwave (~> 0.9)
   coffee-rails (~> 4.0.0)
   event-calendar
   jbuilder (~> 2.0)
