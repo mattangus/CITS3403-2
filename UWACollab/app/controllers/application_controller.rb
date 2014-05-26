@@ -7,10 +7,17 @@ class ApplicationController < ActionController::Base
 
 
   def project
-    @userID = 1 #session[:user_id]
-    @groupID = getGroupByName(params[:name]).id
-    @messages = getMessagesByGroup(@groupID)
-    render 'projects/index'
+    @userID = session[:user_id]
+    @groups = getGroupsByUser(@userID)
+    if params[:new]
+      render 'projects/new'
+    elsif !params[:files]
+      @groupID = getGroupByName(params[:name]).id
+      @messages = getMessagesByGroup(@groupID)
+      render 'projects/index'
+    else
+
+    end
   end
 
   def register
@@ -19,10 +26,14 @@ class ApplicationController < ActionController::Base
   end
 
   def workspace
-
+    @userID = session[:user_id]
+    @groups = getGroupsByUser(@userID)
   end
 
   def index
+    if User.find_by_id(session[:user_id])
+      redirect_to workspace_path
+    end
     #if request.delete?
 
    # end
