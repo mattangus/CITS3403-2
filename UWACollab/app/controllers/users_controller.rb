@@ -1,10 +1,7 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
+  include SessionsHelper
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorize, only: [:create, :new]
-=======
-  before_action :set_user, only: [:show, :create, :edit, :update, :destroy]
->>>>>>> e919ce4ecd921802e6f9ac1407fe3126bd481acb
 
   # GET /users
   # GET /users.json
@@ -34,7 +31,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to '/workspace', notice: 'User was successfully created.' }
+        format.html {
+          login(@user.id,user_params[:password])
+          redirect_to '/workspace', notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
