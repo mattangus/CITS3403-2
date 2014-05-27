@@ -1,0 +1,6 @@
+<%= form_tag('/workspace/newFile', multipart: true)  do %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %></br>
+    <%= file_field_tag :attachment %></br>
+    <%= submit_tag "Save", class: "btn btn-primary" %>
+<% end %>

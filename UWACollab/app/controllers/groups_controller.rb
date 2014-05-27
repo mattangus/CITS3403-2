@@ -24,6 +24,16 @@ class GroupsController < ApplicationController
     redirect_to workspace_path
   end
 
+  def add
+    group = getGroupByName(params[:name])
+    aUser = findUserByEmail(params[:email])
+    if aUser != nil and !(group.users.to_s.split(';').include? aUser.id)
+      group.users = (group.users.to_s + ';' + aUser.id.to_s).to_s
+      group.save
+    end
+    redirect_to :back
+  end
+
   def update
     group = Group.getGroupByName
     respond_to do |format|

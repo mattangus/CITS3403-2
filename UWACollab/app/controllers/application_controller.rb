@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
   include GroupsHelper
   include UsersHelper
   include UpcomingsHelper
+  include UserFilesHelper
+  include SessionsHelper
+
   before_action :authorize
   skip_before_action :authorize, only: [:index, :register]
 
@@ -11,10 +14,16 @@ class ApplicationController < ActionController::Base
   def project
     @userID = session[:user_id]
     @groups = getGroupsByUser(@userID)
+
     if params[:new]
       render 'projects/new'
     elsif !params[:files]
-      @groupID = getGroupByName(params[:name]).id
+      group = getGroupByName(params[:name])
+      @groupID = group.id
+      @users = []
+      group.users.to_s.split(';').each do |id|
+        @users.append(findUserByID(id))
+      end
       @messages = getMessagesByGroup(@groupID)
       render 'projects/index'
     else
@@ -24,6 +33,7 @@ class ApplicationController < ActionController::Base
 
   def userEvent
     @upcoming = new_upcoming
+    @groups = getGroupsByUser(currentUser)
     render 'upcomings/new'
   end
 
@@ -35,7 +45,8 @@ class ApplicationController < ActionController::Base
   def workspace
     @userID = session[:user_id]
     @groups = getGroupsByUser(@userID)
-    @upcomings = Upcoming.where('external_id=?', @userID)
+    @upcomings = getUpcomingByUser(@userID)
+    @files = getFilesByUserID(@userID)
   end
 
   def index

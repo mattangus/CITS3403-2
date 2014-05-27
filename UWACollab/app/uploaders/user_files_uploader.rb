@@ -1,6 +1,6 @@
 # encoding: utf-8
 require 'carrierwave'
-require 'rmagick'
+#require 'rmagick'
 
 class UserFilesUploader < CarrierWave::Uploader::Base
 

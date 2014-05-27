@@ -3,8 +3,8 @@
     <%= label_tag(:name, 'Event Description:') %><br/>
     <%= text_field_tag('upcoming[name]') %><br/>
     <%= label_tag(:date, 'Event Date (MonthName Day):') %><br>
-    <%= text_field_tag('upcoming[date]') %><br/>
+    <%= date_field_tag('upcoming[date]') %><br/>
     <%= label_tag(:tag, 'Event Tag (optional):') %><br/>
-    <%= text_field_tag('upcoming[tag]') %><br/><br>
+    <%= collection_select('upcoming','tag', @groups, :id, :name, :include_blank => true) %><br/><br>
     <%= submit_tag('Create', :class => 'btn btn-primary') %>
 <% end %>

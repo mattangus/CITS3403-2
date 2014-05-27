@@ -1,4 +1,5 @@
- <% @upcomings.each do |g| %>
+<% if @upcomings != nil %>
+  <% @upcomings.each do |g| %>
       <tbody>
         <tr>
           <td> <%= g.name %> </td>
@@ -7,3 +8,4 @@
         </tr>
       </tbody>
   <% end %>
+<% end %>

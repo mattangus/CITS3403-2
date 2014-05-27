@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :user_files, only: [:index, :new, :create, :destroy]
+
   get 'upcomings/new'
-
   get 'upcomings/create'
-
   get 'upcomings/destroy'
 
   get '/calendar(/:year(/:month))', to: 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   get '/workspace', to: 'application#workspace', :files => false
   get '/workspace/files', to: 'application#workspace', :files => true
+  get '/workspace/newFile', to: 'user_files#uploadFile'
+  post '/workspace/newFile', to: 'user_files#create'
+
+
   delete '/workspace', to: 'sessions#destroy'
   delete '/project/:name', to: 'sessions#destroy'
 
@@ -21,6 +25,7 @@ Rails.application.routes.draw do
   post '/register', to: 'sessions#create'
 
   get '/project/:name', to: 'application#project', :files => false
+  post '/project/:name', to: 'groups#add'
   get '/project', to: 'application#project', :files => true
   get '/newProject', to: 'application#project', :new => true
   post '/newProject', to: 'groups#new'
@@ -32,11 +37,13 @@ Rails.application.routes.draw do
   post '/messages', to: 'messages#create'
 
   UWACollab::Application.routes.draw do
-  get 'upcomings/new'
+  get 'user_files/index'
 
-  get 'upcomings/create'
+  get 'user_files/new'
 
-  get 'upcomings/destroy'
+  get 'user_files/create'
+
+  get 'user_files/destroy'
 
     controller :sessions do
       get 'login' => :new

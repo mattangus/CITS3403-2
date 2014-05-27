@@ -90,7 +90,17 @@
           </div>
           <div class="panel-body">
             <div id="editor">
-              <textarea></textarea>
+              <%= render 'projects/new_collaborator' %>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-primary" style="width:250px">
+          <div class="panel-heading">
+            <h3 class="panel-title">Collaborators</h3>
+          </div>
+          <div class="panel-body">
+            <div id="editor">
+              <%= render 'projects/list_collaborators' %>
             </div>
           </div>
         </div>

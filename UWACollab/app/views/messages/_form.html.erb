@@ -1,5 +1,5 @@
 <%= form_tag('/messages', :method => 'post', :remote => true, :id => 'editorForm') do %>
-    <%= text_area(:message, :content) %>
+    <%= text_area(:message, :content, placeholder: 'Start Typing...') %>
     <%= hidden_field_tag('message[group_id]', @groupID) %>
     <%= submit_tag('Send', class: 'btn btn-primary btn-lg', id: 'sendButton') %>
 <% end %>

@@ -1,0 +1,7 @@
+<ul class="list-unstyled">
+  <% @files.each do |f| %>
+      <li>
+        <%= link_to(f.name, f.attachment.url) %>
+      </li>
+  <% end %>
+</ul>

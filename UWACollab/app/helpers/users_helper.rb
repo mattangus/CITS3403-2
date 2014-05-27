@@ -5,4 +5,8 @@ module UsersHelper
   def findUserByEmail(email)
     return User.find_by_email(email)
   end
+
+  def findUserByID(id)
+    return User.find_by_id(id)
+  end
 end

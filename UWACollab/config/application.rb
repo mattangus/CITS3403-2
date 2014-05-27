@@ -24,5 +24,6 @@ module UWACollab
     Rails.application.config.assets.precompile += %w( home.css )
     Rails.application.config.assets.precompile += %w( message_poll.js )
     Rails.application.config.assets.precompile += %w( messages.css )
+    Rails.application.config.assets.precompile += %w( modal.js )
   end
 end
