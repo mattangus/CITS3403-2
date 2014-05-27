@@ -3,7 +3,7 @@
       <tbody>
         <tr>
           <td> <%= g.name %> </td>
-          <td> <%= g.date %> </td>
+          <td> <%= g.date.to_formatted_s(:long) %> </td>
           <td> <%= g.tag %> </td>
         </tr>
       </tbody>
