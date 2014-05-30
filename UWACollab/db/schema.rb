@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20140526231453) do
 
   create_table "upcomings", force: true do |t|
     t.string   "name"
-    t.datetime "date"
+    t.date "date"
     t.string   "tag"
     t.integer  "external_id"
     t.string   "id_type"
